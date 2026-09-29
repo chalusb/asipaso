@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Conexión con TikTok — Así Pasó</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <div class="barra">
+      <a class="marca" href="./"><img src="logo.png" alt="Logo de Así Pasó">Así Pasó</a>
+      <nav>
+        <a href="./">Inicio</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h1>Conexión con TikTok</h1>
+    <p id="msg" class="sub">Autorización recibida. Ya puedes cerrar esta pestaña.</p>
+  </main>
+  <footer class="creditos">
+    <a href="https://www.cssoftware.org/" target="_blank" rel="noopener noreferrer">Desarrollado por CSSoftware</a>
+  </footer>
+  <script>
+    // El código de autorización nunca se muestra ni se guarda en esta página.
+    var q = new URLSearchParams(location.search);
+    if (q.get('error')) document.getElementById('msg').textContent = 'No se completó la autorización. Vuelve a intentarlo desde la herramienta.';
+    if (location.search) history.replaceState(null, '', location.pathname);
+  </script>
+</body>
+</html>
